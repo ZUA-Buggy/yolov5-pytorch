@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-from yolo import YOLO, YOLO_ONNX
+from yolo import YOLO
 
 if __name__ == "__main__":
     #----------------------------------------------------------------------------------------------------------#
@@ -71,10 +71,8 @@ if __name__ == "__main__":
     simplify        = True
     onnx_save_path  = "model_data/models.onnx"
 
-    if mode != "predict_onnx":
-        yolo = YOLO()
-    else:
-        yolo = YOLO_ONNX()
+    yolo = YOLO()
+
 
     if mode == "predict":
         '''
