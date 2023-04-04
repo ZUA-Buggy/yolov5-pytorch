@@ -12,7 +12,7 @@ import random
 
 class ResultItem(TypedDict):
     # 虽然看起来很诡异但在切图时会很好用
-    name: str
+    code: str
     score: float
     top: int
     left: int
@@ -218,7 +218,7 @@ class YOLO(object):
             bottom = min(image.size[1], np.floor(bottom).astype('int32'))
             right = min(image.size[0], np.floor(right).astype('int32'))
             data: ResultItem = {
-                "name": predicted_class,
+                "code": predicted_class,
                 "score": float(score),
                 "top": -top,
                 "left": -left,
